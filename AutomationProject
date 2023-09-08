@@ -1,0 +1,832 @@
+'Macro to create a specific layout in SAP
+Sub SAPLayout()
+
+
+    'connect to SAP
+    Set SapGuiAuto = GetObject("SAPGUI")
+    Set objGui = SapGuiAuto.GetScriptingEngine
+    Set objConn = objGui.Children(0)
+    Set session = objConn.Children(0)
+    
+    
+    'run and save the layout
+    session.findById("wnd[0]").maximize
+    session.findById("wnd[0]/tbar[0]/okcd").text = "/nme5a"
+    session.findById("wnd[0]").sendVKey 0
+    session.findById("wnd[0]/tbar[1]/btn[17]").press
+    session.findById("wnd[1]/usr/txtV-LOW").text = ThisWorkbook.Sheets("Instructions").Range("D3").Value
+    session.findById("wnd[1]/usr/txtV-LOW").caretPosition = 8
+    session.findById("wnd[1]/tbar[0]/btn[8]").press
+    session.findById("wnd[0]/tbar[1]/btn[8]").press
+    session.findById("wnd[0]/tbar[1]/btn[33]").press
+    session.findById("wnd[1]/usr/ssubD0500_SUBSCREEN:SAPLSLVC_DIALOG:0501/cntlG51_CONTAINER/shellcont/shell").currentCellRow = 15
+    session.findById("wnd[1]/usr/ssubD0500_SUBSCREEN:SAPLSLVC_DIALOG:0501/cntlG51_CONTAINER/shellcont/shell").firstVisibleRow = 6
+    session.findById("wnd[1]/usr/ssubD0500_SUBSCREEN:SAPLSLVC_DIALOG:0501/cntlG51_CONTAINER/shellcont/shell").selectedRows = "15"
+    session.findById("wnd[1]/usr/ssubD0500_SUBSCREEN:SAPLSLVC_DIALOG:0501/cntlG51_CONTAINER/shellcont/shell").clickCurrentCell
+    session.findById("wnd[0]/tbar[1]/btn[32]").press
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").currentCellRow = 19
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 10
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").selectedRows = "0-19"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/btnAPP_FL_SING").press
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = -1
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").SelectColumn "SELTEXT"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").pressColumnHeader "SELTEXT"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 192
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 186
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "192"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 172
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 168
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "172"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 98
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 96
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "98"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 41
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 33
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "41"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 159
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 153
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "159"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 168
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 159
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "168"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 45
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 39
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "45"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 148
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 141
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "148"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 125
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 117
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "125"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 46
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 41
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "46"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 111
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 107
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "111"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 204
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 197
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "204"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 2
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 170
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 166
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "170"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 228
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 223
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "228"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 233
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 226
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "233"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 224
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 220
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "224"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 138
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 133
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "138"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 7
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 42
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 40
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "42"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 152
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 145
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "152"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 178
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 172
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "178"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 33
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 28
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "33"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 71
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 67
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "71"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 37
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 30
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "37"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 53
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 48
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "53"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 103
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 96
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "103"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 15
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 120
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 114
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "120"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 2
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 0
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "2"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 70
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 64
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "70"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 81
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 79
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "81"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 146
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 139
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "146"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 98
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 94
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "98"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 54
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 52
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "54"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 22
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 104
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 97
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "104"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 103
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "103"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 171
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 163
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "171"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "171"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 147
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 139
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "147"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 37
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 34
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "37"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 28
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 162
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 160
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "162"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").currentCellRow = 49
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").firstVisibleRow = 43
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "49"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").selectedRows = "49"
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER1_LAYO/shellcont/shell").doubleClickCurrentCell
+    session.findById("wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_DYN0510:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell").firstVisibleRow = 31
+    session.findById("wnd[1]/tbar[0]/btn[0]").press
+    session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").currentCellRow = -1
+    session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").SelectColumn "BADAT"
+    session.findById("wnd[0]/tbar[1]/btn[28]").press
+    session.findById("wnd[0]/tbar[1]/btn[34]").press
+    session.findById("wnd[1]/usr/tabsG50_TABSTRIP/tabpTAB_D0501/ssubD0505_SUBSCREEN:SAPLSLVC_DIALOG:0501/chkLTVARIANT-DEFAULTVAR").Selected = True
+    session.findById("wnd[1]/usr/tabsG50_TABSTRIP/tabpTAB_D0501/ssubD0505_SUBSCREEN:SAPLSLVC_DIALOG:0501/txtLTDX-VARIANT").text = "PR LIST RFQ"
+    session.findById("wnd[1]/usr/tabsG50_TABSTRIP/tabpTAB_D0501/ssubD0505_SUBSCREEN:SAPLSLVC_DIALOG:0501/txtLTDXT-TEXT").text = "PR List for Auto RFQ Tool"
+    session.findById("wnd[1]/usr/tabsG50_TABSTRIP/tabpTAB_D0501/ssubD0505_SUBSCREEN:SAPLSLVC_DIALOG:0501/chkLTVARIANT-DEFAULTVAR").SetFocus
+    session.findById("wnd[1]/tbar[0]/btn[0]").press
+    session.findById("wnd[2]/usr/btnSPOP-OPTION1").press
+
+    
+End Sub
+
+'macro to run a query in SAP
+Sub SAPExportPR()
+
+    
+    'connect to SAP
+    Set SapGuiAuto = GetObject("SAPGUI")
+    Set objGui = SapGuiAuto.GetScriptingEngine
+    Set objConn = objGui.Children(0)
+    Set session = objConn.Children(0)
+    
+    'query data and save to spreadsheet
+    session.findById("wnd[0]").maximize
+    session.findById("wnd[0]/tbar[0]/okcd").text = "/nme5a"
+    session.findById("wnd[0]").sendVKey 0
+    session.findById("wnd[0]/tbar[1]/btn[17]").press
+    session.findById("wnd[1]/usr/txtV-LOW").text = ThisWorkbook.Sheets("Instructions").Range("D3").Value
+    session.findById("wnd[1]/usr/txtV-LOW").caretPosition = 8
+    session.findById("wnd[1]/tbar[0]/btn[8]").press
+    session.findById("wnd[0]/tbar[1]/btn[8]").press
+    session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").setCurrentCell 1, "LOEKZ"
+    session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectedRows = "1"
+    session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
+    session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
+    session.findById("wnd[1]/tbar[0]/btn[0]").press
+    session.findById("wnd[1]/usr/ctxtDY_PATH").text = ThisWorkbook.Sheets("User Info").Range("B3").Value
+    session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "PR List.xlsx"
+    session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 12
+    session.findById("wnd[1]/tbar[0]/btn[11]").press
+    
+    session.findById("wnd[0]").Close
+End Sub
+    
+'macro to transfer only new data to spreadsheet
+Sub NewPRs()
+
+    'declare variables
+    Dim lastRowMain As Long
+    Dim wbPRList As Workbook
+    Dim wsPRList As Worksheet
+    Dim lastRowPRList As Long
+    Dim prNum As String
+    Dim itemOfReq As String
+    Dim rngSource As Range
+    Dim rngTarget As Range
+    Dim i As Long
+    Dim foundMatch As Boolean
+    Dim wbMain As Workbook
+    Dim wsMain As Worksheet
+    Set wbMain = ThisWorkbook
+    Set wsMain = wbMain.Sheets("PR")
+    Set wbPRList = Workbooks("PR List.xlsx")
+    Set wsPRList = wbPRList.Sheets(1)
+
+    'find last row
+    lastRowMain = wsMain.Cells(wsMain.Rows.Count, "C").End(xlUp).Row
+    
+    lastRowPRList = wsPRList.Cells(wsPRList.Rows.Count, "B").End(xlUp).Row
+
+   'match column C in main spreadsheet with column B in new PR spreadsheet if there is a match do not include it in main spreadsheet
+   'if there isn't a match then move new data to main spreadsheet
+    For i = 2 To lastRowPRList
+        prNum = wsPRList.Cells(i, "B").Value
+        itemOfReq = wsPRList.Cells(i, "C").Value
+        foundMatch = False
+
+       
+        For j = 2 To lastRowMain
+            If wsMain.Cells(j, "C").Value = prNum And wsMain.Cells(j, "D").Value = itemOfReq Then
+                foundMatch = True
+                Exit For
+            End If
+        Next j
+
+        If Not foundMatch Then
+            Set rngSource = wsPRList.Range(wsPRList.Cells(i, "A"), wsPRList.Cells(i, "AO"))
+            Set rngTarget = wsMain.Range("B" & lastRowMain + 1)
+            rngSource.Copy rngTarget
+            lastRowMain = lastRowMain + 1
+        End If
+    Next i
+End Sub
+
+'fill out template
+Sub ReplaceText5()
+
+    'set variables
+    Dim wApp As Word.Application
+    Dim wdoc As Word.Document
+    Dim rfqN, suppN, rfqID, path As String
+    Dim r As Long
+    Dim cel As Range
+    Dim i As Long
+    Dim tbl As Word.Table
+
+
+    'connect word application
+    r = Selection.Rows(1).Row
+
+    Set wApp = CreateObject("Word.Application")
+
+    wApp.Visible = True
+
+    Dim filePath As String
+    'use path user entered in spreadsheet
+    filePath = ThisWorkbook.Sheets("User Info").Range("B2").Value
+    Set wdoc = wApp.Documents.Open(Filename:=filePath, ReadOnly:=True)
+    With wdoc
+        
+        'Determine R terms based on project ID column
+        Dim R_terms
+        Set cel51 = Sheet1.Rows(1).Find(What:="Project ID", LookAt:=xlWhole)
+        R_terms = cel51.Column
+        If Sheet1.Cells(r, R_terms).Value = "INDIR" Or Sheet1.Cells(r, R_terms).Value = "CAPXX" Or Sheet1.Cells(r, R_terms) = "NCTAX" Then
+            .Application.Selection.Find.text = "<<R_terms>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "R-1"
+            .Application.Selection.EndOf
+        Else
+            .Application.Selection.Find.text = "<<R_terms>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "R-2"
+            .Application.Selection.EndOf
+        End If
+
+        'Fill out Project ID in template
+        Dim Project_ID
+        Set cel = Sheet1.Rows(1).Find(What:="Project ID", LookAt:=xlWhole)
+        Project_ID = cel.Column
+        .Application.Selection.Find.text = "<<Project_ID>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, Project_ID).Value
+        .Application.Selection.EndOf
+
+        'Fill out contract in template
+        Dim Contract
+        Set cel222 = Sheet1.Rows(1).Find(What:="Contract Number", LookAt:=xlWhole)
+        Contract = cel222.Column
+        .Application.Selection.Find.text = "<<Contract_Number>>"
+        .Application.Selection.Find.Execute
+        
+        'convert contract number to standarf format if it is 13 charachters long
+        Dim contractnum As String
+        contractnum = Sheet1.Cells(r, Contract).Value
+        
+        If Len(contractnum) = 13 Then
+            contractnum = Left(contractnum, 6) & "-" & Mid(contractnum, 7, 2) & "-" & Mid(contractnum, 9, 1) & "-" & Right(contractnum, 4)
+        End If
+            
+        .Application.Selection = contractnum
+        .Application.Selection.EndOf
+        
+        'Fill out Terms and conditions based on the project ID
+        Dim TandC
+        Set cel52 = Sheet1.Rows(1).Find(What:="Project ID", LookAt:=xlWhole)
+        TandC = cel52.Column
+        If Sheet1.Cells(r, TandC).Value = "INDIR" Or Sheet1.Cells(r, TandC).Value = "CAPXX" Then
+            .Application.Selection.Find.text = "<<TandC>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1122"
+            .Application.Selection.EndOf
+
+
+        ElseIf Sheet1.Cells(r, TandC).Value = "NCTAX" Then
+            .Application.Selection.Find.text = "<<TandC>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1124"
+            .Application.Selection.EndOf
+
+        Else
+            .Application.Selection.Find.text = "<<TandC>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1118"
+            .Application.Selection.EndOf
+
+        End If
+
+
+
+        'fill out naics code by calculating naics code associated with largest total value
+        'declare variables
+        'store naics sum in dictionary
+        Dim naicsColumn As Range
+        Dim totalValueColumn As Range
+        Dim naicsSum As Object
+        Dim maxNaics As String
+        Dim maxSum As Double
+        
+        Set naicsColumn = Sheet1.Rows(1).Find(What:="NAICS Code", LookAt:=xlWhole)
+        Set totalValueColumn = Sheet1.Rows(1).Find(What:="Total Value", LookAt:=xlWhole)
+        
+        ' Create a dictionary to store NAICS sums
+        Set naicsSum = CreateObject("Scripting.Dictionary")
+        
+        'go through each row and calculate the sum of the total value associated with each naics code
+        For Each cel In Selection.Rows
+            Dim naicsCode As Variant
+            Dim totalValue As Variant
+            
+            naicsCode = Sheet1.Cells(cel.Row, naicsColumn.Column).Value
+            totalValue = Sheet1.Cells(cel.Row, totalValueColumn.Column).Value
+            
+            ' Check if NAICS code already exists in the dictionary
+            If Not IsEmpty(naicsCode) And Not IsEmpty(totalValue) Then
+                If naicsSum.Exists(naicsCode) Then
+                    ' Add the totalValue to the existing sum
+                    naicsSum(naicsCode) = naicsSum(naicsCode) + totalValue
+                Else
+                    ' Add a new entry to the dictionary with the NAICS code and totalValue
+                    naicsSum.Add naicsCode, totalValue
+                End If
+            End If
+        Next cel
+        
+        ' Find the NAICS code with the largest sum
+        maxSum = 0 ' Reset maxSum
+        For Each naicsCode In naicsSum.Keys
+            If naicsSum(naicsCode) > maxSum Then
+                maxSum = naicsSum(naicsCode)
+                maxNaics = naicsCode
+            End If
+        Next naicsCode
+            
+        'fill out naics code
+        .Application.Selection.Find.text = "<<NAICS_Code>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = maxNaics
+        .Application.Selection.EndOf
+            
+        'declare variables to find size standad
+        Dim sizeStdColumn2 As Range
+        Dim naicsColumn2 As Range
+        Dim sizeStdWithLargestNaics As String
+        Dim maxSizeStdCode2 As String
+        Dim hasErrorSizeStd As Boolean
+        Dim hasBlankSizeStd As Boolean
+        Set sizeStdColumn2 = Sheet1.Rows(1).Find(What:="Size Standard VLOOKUP", LookAt:=xlWhole)
+        Set naicsColumn2 = Sheet1.Rows(1).Find(What:="NAICS Code", LookAt:=xlWhole)
+        
+        ' Find the Size Standard associated with the largest NAICS code
+        sizeStdWithLargestNaics = ""
+        For Each cel In Selection.Rows
+            Dim currSizeStdCode2 As Variant
+            Dim currNaicsCode2 As Variant
+            
+            currSizeStdCode2 = Sheet1.Cells(cel.Row, sizeStdColumn2.Column).Value
+            currNaicsCode2 = Sheet1.Cells(cel.Row, naicsColumn2.Column).Value
+            
+            ' Check if the NAICS code matches the largest NAICS code
+            If currNaicsCode2 = maxNaics Then
+                On Error Resume Next
+                sizeStdWithLargestNaics = currSizeStdCode2
+                Exit For
+            End If
+        Next cel
+        
+        ' Check if the Size Standard is an error or blank
+        If IsError(sizeStdWithLargestNaics) Then
+            hasErrorSizeStd = True
+        ElseIf IsEmpty(sizeStdWithLargestNaics) Or sizeStdWithLargestNaics = " " Or sizeStdWithLargestNaics = "" Then
+            hasBlankSizeStd = True
+        End If
+        
+        ' Handle error case if the Size Standard is an error or blank
+        If hasErrorSizeStd Or hasBlankSizeStd Then
+            ' Set the placeholder in the template to "ENTER SIZE STANDARD MANUALLY" in red font
+            .Application.Selection.Find.text = "<<Size_Standard_VLOOKUP>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "ENTER SIZE STANDARD MANUALLY"
+            .Application.Selection.Font.Color = RGB(255, 0, 0)
+            .Application.Selection.EndOf
+        Else
+            ' Replace the placeholder in the template with the Size Standard associated with the largest NAICS code
+            .Application.Selection.Find.text = "<<Size_Standard_VLOOKUP>>"
+            .Application.Selection.Find.Execute
+            maxSizeStdCode2 = Replace(sizeStdWithLargestNaics, "SizeStd_", "") ' Remove "SizeStd_" prefix
+            .Application.Selection = maxSizeStdCode2
+            .Application.Selection.EndOf
+        End If
+            
+        'fill out order priority in template
+        Dim OrderPriority
+        Set cel4 = Sheet1.Rows(1).Find(What:="Order Priority Description VLOOKUP", LookAt:=xlWhole)
+        OrderPriority = cel4.Column
+        .Application.Selection.Find.text = "<<Order_Priority_Description_VLOOKUP>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, OrderPriority).Value
+        .Application.Selection.EndOf
+
+        'fill out sn_gn18 dpending on order priority
+        Dim sn_g918
+        Set cel5 = Sheet1.Rows(1).Find(What:="Order priority", LookAt:=xlWhole)
+        sn_g918 = cel5.Column
+        If Sheet1.Cells(r, sn_g918).Value = "" Or Sheet1.Cells(r, sn_g918).Value = 0 Or Sheet1.Cells(r, sn_g918) = "Z" Then
+            .Application.Selection.Find.text = "<<SN_G918>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = ""
+            .Application.Selection.EndOf
+        Else
+            .Application.Selection.Find.text = "<<SN_G918>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "(SN G918)"
+            .Application.Selection.EndOf
+        End If
+        
+        'fill out tax indicator in template
+        Dim TaxInd
+        Set celTI = Sheet1.Rows(1).Find(What:="Tax Indicator", LookAt:=xlWhole)
+        TaxInd = celTI.Column
+        .Application.Selection.Find.text = "<<Resale_Indicator_term>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, TaxInd).Value
+        .Application.Selection.EndOf
+        
+        'fill out first row of table with requisition number
+        Dim Req
+        Set cel7p1 = Sheet1.Rows(1).Find(What:="Purchase Requisition", LookAt:=xlWhole)
+        Req = cel7p1.Column
+        .Application.Selection.Find.text = "<<Req>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, Req).Value
+        .Application.Selection.EndOf
+
+        'fill out first row of table with item of requisition
+        Dim IoR
+        Set cel7p2 = Sheet1.Rows(1).Find(What:="Item of requisition", LookAt:=xlWhole)
+        IoR = cel7p2.Column
+        .Application.Selection.Find.text = "<<IoR>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, IoR).Value
+        .Application.Selection.EndOf
+
+        'fill out first row of table with material number
+        Dim Material
+        Set cel7p3 = Sheet1.Rows(1).Find(What:="Material", LookAt:=xlWhole)
+        Material = cel7p3.Column
+        .Application.Selection.Find.text = "<<Material>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, Material).Value
+        .Application.Selection.EndOf
+
+        'fill out first row of table with item description
+        Dim Short_Text
+        Set cel8 = Sheet1.Rows(1).Find(What:="Short Text", LookAt:=xlWhole)
+        Short_Text = cel8.Column
+        .Application.Selection.Find.text = "<<Short_Text>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, Short_Text).Value
+        .Application.Selection.EndOf
+
+        'fill out first row of table with quantity
+        Dim qty
+        Set cel9 = Sheet1.Rows(1).Find(What:="Quantity requested", LookAt:=xlWhole)
+        qty = cel9.Column
+        .Application.Selection.Find.text = "<<Qty>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, qty).Value
+        .Application.Selection.EndOf
+        
+        'fill out unit of measure in table
+        Dim UoM
+        Set cel_10 = Sheet1.Rows(1).Find(What:="Unit of Measure", LookAt:=xlWhole)
+        UoM = cel_10.Column
+        .Application.Selection.Find.text = "<<UoM>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Sheet1.Cells(r, UoM).Value
+        .Application.Selection.EndOf
+        
+        'If column EEE or Electronic has an X, add terms X1066
+        Dim EEE
+        Set cel65 = Sheet1.Rows(1).Find(What:="EEE", LookAt:=xlWhole)
+        EEE = cel65.Column
+        
+        Dim Electronic
+        Set cel66 = Sheet1.Rows(1).Find(What:="Electronic", LookAt:=xlWhole)
+        Electronic = cel66.Column
+        
+        If Sheet1.Cells(r, EEE).Value = "X" Or Sheet1.Cells(r, Electronic).Value = "X" Then
+            .Application.Selection.Find.text = "<<Term>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1066"
+            .Application.Selection.EndOf
+        Else
+            .Application.Selection.Find.text = "<<Term>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = " "
+            .Application.Selection.EndOf
+        End If
+        
+        'Add terms and conditions again based on the project ID
+        Dim TandC2
+        Set cel521 = Sheet1.Rows(1).Find(What:="Project ID", LookAt:=xlWhole)
+        TandC2 = cel521.Column
+        If Sheet1.Cells(r, TandC2).Value = "INDIR" Or Sheet1.Cells(r, TandC2).Value = "CAPXX" Then
+            .Application.Selection.Find.text = "<<TandC2>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1122"
+            .Application.Selection.EndOf
+
+
+        ElseIf Sheet1.Cells(r, TandC2).Value = "NCTAX" Then
+            .Application.Selection.Find.text = "<<TandC2>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1124"
+            .Application.Selection.EndOf
+
+        Else
+            .Application.Selection.Find.text = "<<TandC2>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "X1118"
+            .Application.Selection.EndOf
+
+        End If
+        
+        'determin T44X terms based on R_terms
+        Dim T44_
+        T44_ = R_terms
+ 
+        If Sheet1.Cells(r, R_terms).Value = "INDIR" Or Sheet1.Cells(r, R_terms).Value = "CAPXX" Or Sheet1.Cells(r, R_terms) = "NCTAX" Then
+            .Application.Selection.Find.text = "<<T44_>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "T445"
+            .Application.Selection.EndOf
+        Else
+            .Application.Selection.Find.text = "<<T44_>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = "T446"
+            .Application.Selection.EndOf
+        End If
+        
+        'Add this term if the delivery is going to california
+        Dim X100X
+        Set cel_x100 = Sheet1.Rows(1).Find(What:="California Delivery?", LookAt:=xlWhole)
+        X100 = cel_x100.Column
+ 
+        If Sheet1.Cells(r, X100).Value = "YES" Then
+            .Application.Selection.Find.text = "<<X100>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = ", X100"
+            .Application.Selection.EndOf
+        Else
+            .Application.Selection.Find.text = "<<X100>>"
+            .Application.Selection.Find.Execute
+            .Application.Selection = ""
+            .Application.Selection.EndOf
+        End If
+
+
+
+        'error handling if buyer didn't enter supplier in spreadsheet
+        'If supplier is entered then fill it out in template
+        Dim supplier_num
+        Set cel_11 = Sheet1.Rows(1).Find(What:="Supplier #", LookAt:=xlWhole)
+        
+        If Not cel_11 Is Nothing Then
+            supplier_num = cel_11.Column
+            If Not IsError(Sheet1.Cells(r, supplier_num).Value) Then
+                .Application.Selection.Find.text = "<<supplier_num>>"
+                .Application.Selection.Find.Execute
+                .Application.Selection = Sheet1.Cells(r, supplier_num).Value
+                .Application.Selection.EndOf
+            Else
+                .Application.Selection.Find.text = "<<supplier_num>>"
+                .Application.Selection.Find.Execute
+                .Application.Selection = "ENTER SUPPLIER NUMBER MANUALLY"
+                .Application.Selection.Font.Color = RGB(255, 0, 0)
+                .Application.Selection.EndOf
+            End If
+        End If
+        
+        'fill out rfq deadline as 2 weeks from today
+        .Application.Selection.Find.text = "<<RFQ_Due_Date>>"
+        .Application.Selection.Find.Execute
+        .Application.Selection = Format(Date + 14, "MM/dd/yyyy")
+        .Application.Selection.EndOf
+        
+
+        'connect to table in template
+        Set tbl = .Tables(1)
+        tbl.Cell(1, 1).Range.text = "Requisition"
+        tbl.Cell(1, 2).Range.text = "Line Item"
+        tbl.Cell(1, 3).Range.text = "Description"
+        tbl.Cell(1, 4).Range.text = "Qty"
+        tbl.Cell(1, 5).Range.text = "UoM"
+        tbl.Cell(1, 6).Range.text = "Line Item Terms"
+        tbl.Rows(1).HeadingFormat = True
+        tbl.Borders.Enable = True
+
+        'for each highlighted row except the first one create a new row in the table and add the part details
+        For Each cel In Selection.Rows
+            If cel.Row <> r Then
+                i = i + 1
+                tbl.Rows.Add
+                tbl.Cell(tbl.Rows.Count, 1).Range.text = Sheet1.Cells(cel.Row, Req).Value
+                tbl.Cell(tbl.Rows.Count, 2).Range.text = Sheet1.Cells(cel.Row, IoR).Value
+                tbl.Cell(tbl.Rows.Count, 3).Range.text = Sheet1.Cells(cel.Row, Material).Value & " " & Sheet1.Cells(cel.Row, Short_Text).Value
+                tbl.Cell(tbl.Rows.Count, 4).Range.text = Sheet1.Cells(cel.Row, qty).Value
+                tbl.Cell(tbl.Rows.Count, 5).Range.text = Sheet1.Cells(cel.Row, UoM).Value
+                Dim eeeColumn1 As Variant
+                Dim electronicColumn1 As Variant
+                Set eeeColumn1 = Sheet1.Rows(1).Find(What:="EEE", LookAt:=xlWhole)
+                Set electronicColumn1 = Sheet1.Rows(1).Find(What:="Electronic", LookAt:=xlWhole)
+            
+                If Sheet1.Cells(cel.Row, eeeColumn1.Column).Value = "X" Or Sheet1.Cells(cel.Row, electronicColumn1.Column).Value = "X" Then
+                    tbl.Cell(tbl.Rows.Count, 6).Range.text = "X1066"
+                End If
+            
+            End If
+            
+         Next cel
+         
+         'format table
+         With tbl.Cell(tbl.Rows.Count, 1).Range
+            .ParagraphFormat.Alignment = wdAlignParagraphCenter
+         End With
+
+         With tbl.Cell(tbl.Rows.Count, 2).Range
+            .ParagraphFormat.Alignment = wdAlignParagraphCenter
+         End With
+
+         With tbl.Cell(tbl.Rows.Count, 3).Range
+            .ParagraphFormat.Alignment = wdAlignParagraphCenter
+         End With
+
+         With tbl.Cell(tbl.Rows.Count, 4).Range
+            .ParagraphFormat.Alignment = wdAlignParagraphCenter
+         End With
+
+         With tbl.Cell(tbl.Rows.Count, 5).Range
+            .ParagraphFormat.Alignment = wdAlignParagraphCenter
+         End With
+
+         With tbl.Cell(tbl.Rows.Count, 6).Range
+            .ParagraphFormat.Alignment = wdAlignParagraphCenter
+         End With
+        
+    
+         'save the docment based on the rfq number and supplier chosen in folder path the user entered in user info tab
+         Dim rfq_num
+         Set cel_rfq = Sheet1.Rows(1).Find(What:="RFQ Tracker", LookAt:=xlWhole)
+         rfq_num = cel_rfq.Column
+         
+         
+         Dim supplier
+         Set cel_supplier = Sheet1.Rows(1).Find(What:="Supplier Name", LookAt:=xlWhole)
+         supplier_name = cel_supplier.Column
+    
+         If IsEmpty(supplier_name) Then
+            supplier_name = ""
+         End If
+         
+         rfqN = Sheet1.Cells(r, 1).Value
+         suppN = Sheet1.Cells(r, supplier_name).Value
+         rfqID = rfqN & " " & suppN
+         
+
+         Dim savePath As String
+         savePath = ThisWorkbook.Sheets("User Info").Range("B3").Value
+         .SaveAs2 Filename:=savePath & "\" & rfqID, _
+         FileFormat:=wdFormatXMLDocument, AddtoRecentFiles:=False
+
+
+
+        '.Save
+
+    End With
+
+    Set wdoc = Nothing
+    Set wApp = Nothing
+
+End Sub
+
+'macro to convert contract number and open the website
+Sub ConvertAndOpenWebsite2()
+
+
+    Dim rngClicked As Range
+    Dim contractnum As String
+    Dim convertedContract As String
+
+    ' Prompt the user to click on a cell in column G or continue without clicking
+    On Error Resume Next ' Avoid error if user clicks outside of column G
+    Set rngClicked = Application.InputBox("Click on a cell in column G to convert its value." & vbCrLf & _
+                                          "Press 'Cancel' to continue without converting.", Type:=8)
+    On Error GoTo 0
+
+    ' Check if the user clicked on a valid cell in column G
+    If Not rngClicked Is Nothing Then
+        If rngClicked.Column = 7 Then
+            ' Convert the value in the clicked cell
+            contractnum = rngClicked.Value
+            If Len(contractnum) = 13 Then
+                convertedContract = Left(contractnum, 6) & "-" & Mid(contractnum, 7, 2) & "-" & Mid(contractnum, 9, 1) & "-" & Right(contractnum, 4)
+            Else
+                convertedContract = contractnum ' Keep the original value if not 13 characters long
+            End If
+        End If
+    End If
+
+    ' Copy the converted or original contract number to the clipboard using Windows API
+    If convertedContract <> "" Then
+        CopyTextToClipboard convertedContract
+    End If
+
+    ' Open the website
+    On Error Resume Next ' Ignore any errors while opening the website
+    Shell "explorer ""[website redacted]""", vbMaximizedFocus ' Change the URL as needed
+    On Error GoTo 0
+
+    
+End Sub
+'macro to copy data to clipboard
+Sub CopyTextToClipboard(ByVal text As String)
+    Dim dataObj As Object
+    Set dataObj = CreateObject("New: {1C3B4210-F441-11CE-B9EA-00AA006B1A69}")
+    dataObj.SetText text
+    dataObj.PutInClipboard
+    
+End Sub
+
